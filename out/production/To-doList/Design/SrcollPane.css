@@ -1,0 +1,8 @@
+.scrpane > .viewport {
+  -fx-background-color: transparent;
+}
+
+
+.scrpane {
+  -fx-background-color:transparent;
+}
