@@ -27,7 +27,15 @@ public class Controller {
     @FXML
     private Pane leftPane;
     @FXML
-    private ScrollPane scrollPane;
+    private TableView<MyEvent> tvEvent;
+    @FXML
+    private TableColumn<String, MyEvent> tableColumnNumber;
+    @FXML
+    private TableColumn<String, MyEvent> tableColumnContent;
+    @FXML
+    private TableColumn<String, MyEvent> tableColumnDeadline;
+
+
     @FXML
     private AnchorPane anchorPane;
 
