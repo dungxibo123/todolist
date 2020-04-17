@@ -36,6 +36,7 @@
   -fx-font-weight: bold;
   -fx-background-color: linear-gradient(to right, #442939, #473044, #483750, #483f5b, #464765, #485779, #47688c, #42799e, #3c98bc, #37b9d4, #40dae6, #5ffbf1);
 
+
 }
 .subpane {
   -fx-text-align: center;
@@ -43,6 +44,7 @@
   -fx-font-family: "Tahoma";
   -fx-font-weight: bold;
   -fx-pref-height: inherit;
+  -fx-background-color: transparent;
 }
 
 .cb {

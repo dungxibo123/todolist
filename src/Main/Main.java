@@ -19,7 +19,6 @@ public class Main extends Application {
             Parent root = FXMLLoader.load(getClass().getResource("/AddEventWindow/AddPage.fxml"));
             Scene scene = new Scene(root);
             scene.getRoot().applyCss();
-            TableView<MyEvent> tv = (TableView< MyEvent >) scene.lookup(".tvEvent");
         }
         catch (IOException e)
         {
