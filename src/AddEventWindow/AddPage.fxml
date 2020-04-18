@@ -9,7 +9,7 @@
 
 <AnchorPane fx:id="anchorPane" prefHeight="255.0" prefWidth="456.0" styleClass="pane" stylesheets="@../Design/Main.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AddEventWindow.AddEventController">
    <children>
-      <TextField fx:id="tfActivity" layoutX="99.0" layoutY="30.0" prefHeight="31.0" prefWidth="354.0" />
+      <TextField fx:id="tfEvent" layoutX="99.0" layoutY="30.0" prefHeight="31.0" prefWidth="354.0" />
       <Label alignment="CENTER" layoutY="30.0" prefHeight="31.0" prefWidth="89.0" styleClass="lb" stylesheets="@../Design/Main.css" text="Activity" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
       <ButtonBar layoutX="161.0" layoutY="208.0" prefHeight="40.0" prefWidth="292.0">
         <buttons>

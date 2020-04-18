@@ -17,6 +17,12 @@ public class MyEvent {
         this.id = id;
     }
 
+    public MyEvent(String content, LocalDate ld) {
+        this.content = content;
+        this.deadline = ld;
+        this.deadlineString = deadline.toString();
+    }
+
 
     public String getContent() {
         return this.content;
@@ -24,6 +30,10 @@ public class MyEvent {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public LocalDate getDeadline() {
+        return this.deadline;
     }
 
     public String getDeadlineString() {
@@ -36,5 +46,11 @@ public class MyEvent {
 
     public Integer getId() {
         return id;
+    }
+
+    public void setDeadline(LocalDate value) {
+        this.deadline = value;
+        this.deadlineString = deadline.toString();
+
     }
 }

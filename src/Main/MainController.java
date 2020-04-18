@@ -3,7 +3,9 @@ package Main;
 
 import AddEventWindow.AddEventController;
 import Event.MyEvent;
+import FixEventWindow.FixEventController;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 
 import javafx.fxml.FXMLLoader;
@@ -13,6 +15,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
@@ -20,6 +23,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 
@@ -29,6 +33,11 @@ public class MainController implements Initializable {
     private Button buttonAdd;
     @FXML
     private Button buttonList;
+
+    @FXML
+    private Button fixButton;
+    @FXML
+    private Button removeButton;
     @FXML
     private Pane leftPane;
     @FXML
@@ -69,6 +78,65 @@ public class MainController implements Initializable {
         });
     }
 
+
+
+    public void fix(ActionEvent event) {
+        fixButton.setOnMouseClicked(e -> {
+            fixButton.setCursor(Cursor.HAND);
+            try {
+
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/FixEventWindow/FixPage.fxml"));
+                Parent root = loader.load();
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root));
+                stage.initModality(Modality.APPLICATION_MODAL);
+                FixEventController controller = loader.getController();
+
+                controller.connectTableView(tvEvent);
+                stage.show();
+
+
+            } catch (IOException xe) {
+                xe.printStackTrace();
+          }
+
+        });
+    }
+
+    public void remove(ActionEvent event) {
+        removeButton.setOnMouseClicked(e -> {
+            removeAlert();
+            tvEvent.refresh();
+        });
+    }
+
+    public void connectTableView(TableView<MyEvent> t) {
+        tvEvent = t;
+    }
+
+
+
+    private void alert() {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("ERROR");
+        alert.setHeaderText("Error with Event");
+        alert.show();
+    }
+
+    private void removeAlert() {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        ButtonType buttonConfirm = new ButtonType("Confirm", ButtonBar.ButtonData.OK_DONE);
+        ButtonType buttonCancel = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
+        alert.getButtonTypes().setAll(buttonConfirm,buttonCancel);
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == buttonConfirm) {
+            tvEvent.getItems().remove(tvEvent.getSelectionModel().getSelectedItem());
+        }
+        else {
+            return;
+        }
+        return;
+    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         leftPane.prefHeightProperty().bind(anchorPane.heightProperty());
@@ -77,18 +145,8 @@ public class MainController implements Initializable {
 
         tableColumnDeadline.setCellValueFactory(new PropertyValueFactory<>("deadlineString"));
         tableColumnContent.setCellValueFactory(new PropertyValueFactory<>("content"));
-        tableColumnNumber.setCellValueFactory(new PropertyValueFactory<>("id"));
+
 
     }
-
-
-    //setTable
-    public TableView<MyEvent> getTableView()
-    {
-        return tvEvent;
-    }
-
-
-
 
 }
