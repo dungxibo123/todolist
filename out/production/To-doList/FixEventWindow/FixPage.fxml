@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="255.0" prefWidth="456.0" styleClass="pane" stylesheets="@../Design/Main.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FixEventWindow.FixEventController">
+    <children>
+        <TextField fx:id="tfEvent" layoutX="99.0" layoutY="30.0" prefHeight="31.0" prefWidth="354.0" />
+        <Label alignment="CENTER" layoutY="30.0" prefHeight="31.0" prefWidth="89.0" styleClass="lb" stylesheets="@../Design/Main.css" text="Activity" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+        <ButtonBar layoutX="161.0" layoutY="208.0" prefHeight="40.0" prefWidth="292.0">
+            <buttons>
+                <Button fx:id="confirmButton" mnemonicParsing="false" onAction="#confirm" prefWidth="149.0" stylesheets="@../Design/Main.css" text="Confirm" />
+                <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancel" stylesheets="@../Design/Main.css" text="Cancel" />
+            </buttons>
+        </ButtonBar>
+        <DatePicker fx:id="datePicker" layoutX="99.0" layoutY="113.0" />
+        <Label layoutX="5.0" layoutY="116.0" styleClass="lb" stylesheets="@../Design/Main.css" text="Deadline" />
+    </children>
+</AnchorPane>
