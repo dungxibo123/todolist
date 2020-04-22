@@ -1,6 +1,7 @@
 package AddEventWindow;
 
 
+import DatabaseConnector.DatabaseConnector;
 import Event.MyEvent;
 import Main.MainController;
 import javafx.collections.ObservableList;
@@ -12,7 +13,9 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
+import java.sql.*;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
@@ -36,16 +39,11 @@ public class AddEventController implements Initializable {
                 String eventContent = tfEvent.getText();
                 LocalDate eventDate = datePicker.getValue();
                 MyEvent event = new MyEvent(eventContent,eventDate);
-                try {
-                    FXMLLoader loader = new FXMLLoader();
-                    loader.setLocation(getClass().getResource("Main/mainWindow.fxml"));
-                    MainController controller = loader.getController();
-                    tableView.getItems().add(event);
-
-                } catch (Exception xe)
-                {
-                    xe.printStackTrace();
-                }
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("Main/mainWindow.fxml"));
+                MainController controller = loader.getController();
+                tableView.getItems().add(event);
+                addEventIntoDatabase(event);
             } catch (Exception ae)
             {
                 alert();
@@ -86,5 +84,14 @@ public class AddEventController implements Initializable {
     {
         tableView = tb;
     }
+    public void addEventIntoDatabase  (MyEvent event) throws SQLException {
+        Connection conn = DatabaseConnector.Connector();
 
+        PreparedStatement ps = conn.prepareStatement("INSERT INTO ToDoList (id,content,deadline) VALUES (?,?,?)");
+        ps.setString(1,event.getId());
+        ps.setString(2, event.getContent());
+        ps.setString(3, event.getDeadlineString());
+        ps.executeUpdate();
+        conn.close();
+    }
 }

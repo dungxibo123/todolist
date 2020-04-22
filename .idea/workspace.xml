@@ -2,21 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="*some change about mainWindow*&#10;withdraw ScrollPane replace with TableView,&#10;*Dang trong thoi gian tim hieu TableView and relevant*">
-      <change afterPath="$PROJECT_DIR$/src/FixEventWindow/FixEventController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FixEventWindow/FixPage.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_30_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DatabaseConnector/DatabaseConnector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/To-doList.iml" beforeDir="false" afterPath="$PROJECT_DIR$/To-doList.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/To-doList/AddEventWindow/AddEventController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/To-doList/AddEventWindow/AddEventController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/To-doList/AddEventWindow/AddPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/To-doList/AddEventWindow/AddPage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/To-doList/Design/AppButton.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/To-doList/Event/MyEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/To-doList/Event/MyEvent.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/To-doList/Main/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/To-doList/Main/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/To-doList/Main/mainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/To-doList/Main/mainWindow.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AddEventWindow/AddEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddEventWindow/AddEventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AddEventWindow/AddPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddEventWindow/AddPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Design/AppButton.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Event/MyEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Event/MyEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FixEventWindow/FixEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FixEventWindow/FixEventController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/mainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/mainWindow.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -98,9 +95,13 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sqlite-jdbc-3.30.1.jar!/" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
@@ -110,6 +111,7 @@
       <recent name="Main" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Java\To-do List" />
       <recent name="E:\Java\To-do List\src\Design" />
     </key>
   </component>

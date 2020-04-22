@@ -1,5 +1,6 @@
 package FixEventWindow;
 
+import DatabaseConnector.DatabaseConnector;
 import Event.MyEvent;
 import Main.MainController;
 import javafx.fxml.FXML;
@@ -12,6 +13,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
@@ -51,6 +55,8 @@ public class FixEventController implements Initializable {
                 String co = tfEvent.getText();
                 tvMyEvent.getSelectionModel().getSelectedItem().setContent(co);
                 tvMyEvent.getSelectionModel().getSelectedItem().setDeadline(da);
+                System.out.println(tvMyEvent.getSelectionModel().getSelectedItem().getId());
+                fixEventFromDatabase(tvMyEvent.getSelectionModel().getSelectedItem().getId(), tvMyEvent.getSelectionModel().getSelectedItem().getContent() , tvMyEvent.getSelectionModel().getSelectedItem().getDeadlineString());
                 //refresh after updating
                 tvMyEvent.refresh();
             }
@@ -78,4 +84,19 @@ public class FixEventController implements Initializable {
             ((Stage)((Node)event.getSource()).getScene().getWindow()).close();
         });
     }
+
+    private void fixEventFromDatabase(String id, String content, String deadline) throws SQLException {
+        Connection conn = DatabaseConnector.Connector();
+        String query = "UPDATE ToDoList SET content = ?, "
+                + "deadline = ? "
+                + "WHERE id = ?";
+        PreparedStatement ps = conn.prepareStatement(query);
+
+        ps.setString(1, content);
+        ps.setString(2, deadline);
+        ps.setString(3, id);
+        ps.executeUpdate();
+        conn.close();
+    }
+
 }
